@@ -1,0 +1,30 @@
+{
+  "seller": [
+    {
+      "name": "anil",
+      "email": "anil@gmail.com",
+      "password": "anil123",
+      "id": 1
+    }
+  ],
+  "product": [
+    {
+      "name": "i phone",
+      "price": "50000",
+      "color": "black",
+      "category": "mobile",
+      "image": "https://m.media-amazon.com/images/I/31qeR3U2bdL._SY445_SX342_QL70_FMwebp_.jpg",
+      "description": "good mobile phone",
+      "id": 1
+    },
+    {
+      "name": "nokia",
+      "price": "3000",
+      "color": "black",
+      "category": "mobile",
+      "image": "https://m.media-amazon.com/images/I/41ZJqsmrk5L._SX300_SY300_QL70_FMwebp_.jpg",
+      "description": "good product",
+      "id": 2
+    }
+  ]
+}

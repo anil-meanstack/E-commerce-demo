@@ -1,0 +1,24 @@
+<div class="container">
+   <div class="row">
+ <ng-container *ngFor="let item of  Product_Of_data ">
+    <div class="card col-md-3">
+      <img src="{{item.image}}">
+      <h4 style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.name}}</h4>
+      <p>{{item.color}}</p>
+      <p style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+      <p><strong>Amout:Rs</strong>{{item.price}}/-</p>
+      <a class="text-center" routerLink="/view-details">View-Details</a>
+      <button class="mt-4 btn btn-dark">Add to cart</button>
+    </div>
+</ng-container>
+
+   </div> 
+
+</div>
+
+
+
+
+
+
+<app-footer></app-footer>
