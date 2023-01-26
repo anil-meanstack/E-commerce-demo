@@ -11,7 +11,11 @@ import { DataService } from '../data.service';
 })
 export class SellerComponent implements OnInit {
   data!: FormGroup;
-  constructor(private signup: DataService, private _router: Router) { }
+  loginData!: FormGroup;
+  showLogin = false;
+  authError: string = "";
+
+  constructor(private service: DataService, private _router: Router) { }
 
   ngOnInit(): void {
     this.data = new FormGroup({
@@ -19,15 +23,33 @@ export class SellerComponent implements OnInit {
       email: new FormControl(""),
       password: new FormControl("")
     })
+    this.loginData = new FormGroup({
+      email: new FormControl,
+      password: new FormControl
+    })
+    this.service.reloadSeller();
   }
   get input(): { [key: string]: AbstractControl } {
     return this.data.controls;
 
   }
   dataSubmit() {
-   this.signup.signup(this.data.value).subscribe(res=>{
-   console.log(res)
-   })
+    this.service.signup(this.data.value)
+  }
+  loginDataSubmit() {
+    this.authError = "";
+    this.service.login(this.loginData.value)
+    this.service.loginError.subscribe((result) => {
+      if (result) {
+        this.authError = "Email or password not coorect";
+      }
+    })
   }
 
+  openLogin() {
+    this.showLogin = true
+  }
+  openSignup() {
+    this.showLogin = false
+  }
 }
